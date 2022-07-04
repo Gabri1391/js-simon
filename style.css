@@ -20,5 +20,19 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 200px;
+    margin-top: 50px;
+}
+
+.text{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#display{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 20px;
 }
