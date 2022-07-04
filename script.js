@@ -56,7 +56,7 @@ setTimeout( function(){
         }
      }
    
-    display.innerHTML = (`Hai totalizzato ${score.length} punti.</br> I numeri indovinati sono ${score}.`)
+    display.innerHTML = (`Hai totalizzato ${score.length} punti su 5.</br> I numeri indovinati sono ${score}.`)
     
 },10500);
 
