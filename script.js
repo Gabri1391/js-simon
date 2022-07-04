@@ -6,7 +6,7 @@ const panel = document.getElementById('panel');
 const display = document.getElementById('display');
 
 //Genero un array di 5 numeri casuali diversi tra di loro
-const arrayNumbers = [];
+let arrayNumbers = [];
 
 function getRandomNumber (min = 1, max = 100){
     const randomNumber = Math.floor(Math.random() * (max + 1 - min)) + min;
@@ -37,13 +37,26 @@ panel.innerHTML = arrayNumbers;
     }
 
  },1000);
-
-
+ 
+ 
+ let guessNumbers = [];
+ let score = [];
  //Chiedo all'utente di inserire i numeri in ordine
 setTimeout( function(){
-    const firstUserNumber = prompt('Inserisci il primo numero della lista');
-    const secUserNumber = prompt('Inserisci il secondo numero della lista');
-    const thirdUserNumber = prompt('Inserisci il terzo numero della lista');
-    const fourthtUserNumber = prompt('Inserisci il quarto numero della lista');
-    const fifthUserNumber = prompt('Inserisci il quinto numero della lista');
-},12000);
+    for (let i = 0; i < 5; i++) {
+        const guessNumber = parseInt(prompt(`Indovina il ${i + 1}° numero`));
+        guessNumbers.push(guessNumber);
+    }
+
+    console.log('I numeri che hai scritto sono:' + guessNumbers);
+
+    for (let j = 0; j < guessNumbers.length; j++) {
+        if (arrayNumbers.includes(guessNumbers[j])) {
+            score.push(guessNumbers[j]);
+        }
+     }
+   
+    display.innerHTML = (`Hai totalizzato ${score.length} punti.</br> I numeri indovinati sono ${score}.`)
+    
+},10500);
+
